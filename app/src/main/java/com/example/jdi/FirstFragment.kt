@@ -15,13 +15,13 @@ class FirstFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
         val view: View = inflater!!.inflate(R.layout.fragment_first, container, false)
-
+/*
         val file = File(requireContext().filesDir, "noteFile.txt")
         val contents = file.readText()
 
         tv_display_note = view.findViewById(R.id.tv_display_note)
         tv_display_note.text = contents
-
+*/
 
 
 
