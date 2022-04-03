@@ -27,7 +27,4 @@ open class Categorie(): RealmObject() {
             }
         }
     set(value){ typeCategorie = value.name }
-
-
-
 }

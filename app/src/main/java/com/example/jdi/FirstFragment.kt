@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import java.io.File
 
-class FirstFragment : Fragment() {
+class FirstFragment() : Fragment() {
     // inflate the layout
     lateinit var tv_display_note : TextView;
 

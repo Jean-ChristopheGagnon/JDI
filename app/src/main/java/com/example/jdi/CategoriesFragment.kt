@@ -5,9 +5,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.LinearLayout
 import androidx.fragment.app.Fragment
 
-class CategoriesFragment : Fragment() {
+class CategoriesFragment() : Fragment() {
 
     lateinit var btn_cat_text : Button
     lateinit var btn_cat_dream : Button
@@ -15,8 +16,14 @@ class CategoriesFragment : Fragment() {
 
         val view: View = inflater!!.inflate(R.layout.fragment_categories, container, false)
 
+/*
+        val button_dynamic = Button(this)
+        button_dynamic.layoutParams = LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT)
+        button_dynamic.text = "Dynamic Button"
+*/
 
 
+/*
         btn_cat_text = view.findViewById(R.id.btn_cat_text)
         btn_cat_text.setOnClickListener {
             loadCatFragment(CatTextFragment(), view)
@@ -26,7 +33,7 @@ class CategoriesFragment : Fragment() {
         btn_cat_dream.setOnClickListener {
             loadCatFragment(CatDreamFragment(), view)
         }
-
+*/
 
 
         return view

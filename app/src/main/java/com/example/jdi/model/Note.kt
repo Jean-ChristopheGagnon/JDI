@@ -1,6 +1,7 @@
 package com.example.jdi.model
 
 import io.realm.RealmDictionary
+import io.realm.RealmList
 import io.realm.RealmObject
 import io.realm.annotations.PrimaryKey
 import io.realm.annotations.RealmField
@@ -10,6 +11,6 @@ open class Note(): RealmObject() {
     @PrimaryKey
     @RealmField("_id") var id: ObjectId = ObjectId()
     var titreNote: String? = null
-    var categorie: Categorie? = null
-    var reponses: RealmDictionary<String>? = null
+    var categorie: String? = null
+    var reponses: RealmList<Couple>? = null
 }

@@ -1,24 +1,27 @@
 package com.example.jdi
 
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.viewpager.widget.ViewPager
+import com.example.jdi.model.Couple
 import com.google.android.material.tabs.TabLayout
-import android.util.Log
+import io.realm.RealmList
 
-import java.util.Scanner
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var pager: ViewPager // creating object of ViewPager
     private lateinit var tab: TabLayout  // creating object of TabLayout
     private lateinit var bar: Toolbar    // creating object of ToolBar
+    //var builder = MaterialDialog.Builder(this@MainActivity)
+    var dataBaseManager : DataBaseManager = DataBaseManager()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         setContentView(R.layout.activity_main)
 
         // set the references of the declared objects above
@@ -42,7 +45,11 @@ class MainActivity : AppCompatActivity() {
 
         // bind the viewPager with the TabLayout.
         tab.setupWithViewPager(pager)
-        Log.i("xxxxxxxxxxx", "!!!!!!!!!!!!!!!!!!!!!!!!!!")
+
+    }
+
+    fun passListToDBM(listeCouple : RealmList<Couple>, titreNote : String, categorieID : String) {
+        dataBaseManager.sauverNote(listeCouple, titreNote, categorieID)
     }
 
 
