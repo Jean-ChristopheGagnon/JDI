@@ -32,13 +32,13 @@ class DataBaseManager : Application() {
         val backgroundThreadRealm: Realm = Realm.getInstance(config)
 
         val query = backgroundThreadRealm.where<Categorie>()
-        if(query.equalTo("nomCategorie", "Films").count() > 0){
+        if(query.equalTo("nomCategorie", "Films").count() == 0.toLong()){
             sauverCatFilms(backgroundThreadRealm)
         }
-        if(query.equalTo("nomCategorie", "Reves").count() > 0){
+        if(query.equalTo("nomCategorie", "Reves").count() == 0.toLong()){
             sauverCatReve(backgroundThreadRealm)
         }
-        if(query.equalTo("nomCategorie", "Texte").count() > 0){
+        if(query.equalTo("nomCategorie", "Texte").count() == 0.toLong()){
             sauverCatReve(backgroundThreadRealm)
         }
     }
