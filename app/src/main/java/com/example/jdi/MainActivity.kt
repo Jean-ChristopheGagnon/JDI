@@ -7,6 +7,7 @@ import android.widget.Button
 import androidx.appcompat.widget.Toolbar
 import androidx.viewpager.widget.ViewPager
 import com.google.android.material.tabs.TabLayout
+import android.util.Log
 
 import java.util.Scanner
 
@@ -41,6 +42,7 @@ class MainActivity : AppCompatActivity() {
 
         // bind the viewPager with the TabLayout.
         tab.setupWithViewPager(pager)
+        Log.i("xxxxxxxxxxx", "!!!!!!!!!!!!!!!!!!!!!!!!!!")
     }
 
 
