@@ -14,7 +14,6 @@ open class Champ(): RealmObject() {
     var nomChamp: String = ""
     @Required
     var typeReponse: String = TypeReponse.Texte.name
-    @Required
     var estObligatoire: Boolean = true
     var typeReponseEnum: TypeReponse
         get() {
