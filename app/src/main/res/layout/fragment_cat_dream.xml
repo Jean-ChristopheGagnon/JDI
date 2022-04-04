@@ -29,6 +29,6 @@
         android:layout_marginTop="0sp"
         android:layout_marginBottom="24sp"
         android:text="Sauvegarder" 
-        android:layout_below="@id/dp_dream"/>/>
+        android:layout_below="@id/dp_dream"/>
         
 </RelativeLayout>

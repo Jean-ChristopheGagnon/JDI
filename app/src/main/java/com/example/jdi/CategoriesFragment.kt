@@ -12,11 +12,10 @@ class CategoriesFragment() : Fragment() {
 
     lateinit var btn_cat_text : Button
     lateinit var btn_cat_dream : Button
+    lateinit var btn_cat_movie : Button
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
         val view: View = inflater!!.inflate(R.layout.fragment_categories, container, false)
-
-
 
         btn_cat_text = view.findViewById(R.id.btn_cat_text)
         btn_cat_text.setOnClickListener {
@@ -28,7 +27,10 @@ class CategoriesFragment() : Fragment() {
             loadCatFragment(CatDreamFragment(), view)
         }
 
-
+        btn_cat_movie = view.findViewById(R.id.btn_cat_movie)
+        btn_cat_movie.setOnClickListener {
+            loadCatFragment(CatMovieFragment(), view)
+        }
 
         return view
     }
