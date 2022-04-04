@@ -2,9 +2,10 @@ package com.example.jdi
 
 
 import android.os.Bundle
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentTransaction
 import androidx.viewpager.widget.ViewPager
 import com.example.jdi.model.Couple
 import com.example.jdi.model.Note
@@ -55,6 +56,24 @@ class MainActivity : AppCompatActivity() {
 
     fun queryNotesFromDBM(): RealmResults<Note>? {
         return dataBaseManager.chargerNotes()
+    }
+
+    fun refreshNotes(){
+        var frg: Fragment? = supportFragmentManager.findFragmentByTag("tagNotesFragment")
+
+        val ft: FragmentTransaction = supportFragmentManager.beginTransaction()
+        if (frg != null) {
+            ft.detach(frg)
+        }
+        ft.commit()
+
+        val ft2: FragmentTransaction = supportFragmentManager.beginTransaction()
+        if (frg != null) {
+            ft2.attach(frg)
+        }
+        ft2.commit()
+
+
     }
 
 

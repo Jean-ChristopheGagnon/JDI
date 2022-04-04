@@ -37,5 +37,7 @@ class CatTextFragment : Fragment() {
         var listeCouple: RealmList<Couple> = RealmList()
         listeCouple.add(couple)
         (activity as MainActivity?)!!.passListToDBM(listeCouple, et_text.text.toString(), "0")
+        (activity as MainActivity?)!!.refreshNotes()
+
     }
 }

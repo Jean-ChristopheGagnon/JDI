@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentStatePagerAdapter
 
+
 class ViewPagerAdapter(supportFragmentManager: FragmentManager) :
     FragmentStatePagerAdapter(supportFragmentManager) {
 
@@ -31,5 +32,10 @@ class ViewPagerAdapter(supportFragmentManager: FragmentManager) :
         // add each fragment and its title to the array list
         mFragmentList.add(fragment)
         mFragmentTitleList.add(title)
+    }
+
+    override fun getItemPosition(`object`: Any): Int {
+        // POSITION_NONE makes it possible to reload the PagerAdapter
+        return POSITION_NONE
     }
 }

@@ -16,9 +16,6 @@ import java.util.*
 
 class SecondFragment : Fragment() {
 
-
-    lateinit var btn_cat_text : Button;
-
     // inflate the layout
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 

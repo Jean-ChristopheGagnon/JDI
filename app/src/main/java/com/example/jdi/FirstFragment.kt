@@ -15,7 +15,7 @@ class FirstFragment() : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
         val view: View = inflater!!.inflate(R.layout.fragment_first, container, false)
-        parentFragmentManager.beginTransaction().replace(R.id.note_container, NotesFragment(), tag).commit()
+        parentFragmentManager.beginTransaction().replace(R.id.note_container, NotesFragment(), "tagNotesFragment").commit()
 
         return view
     }
