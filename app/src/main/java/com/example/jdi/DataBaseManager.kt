@@ -5,6 +5,7 @@ import com.example.jdi.model.*
 import io.realm.Realm
 import io.realm.RealmConfiguration
 import io.realm.RealmList
+import io.realm.RealmResults
 import io.realm.kotlin.createObject
 import io.realm.kotlin.where
 import org.bson.types.ObjectId
@@ -12,6 +13,7 @@ import org.bson.types.ObjectId
 
 
 class DataBaseManager : Application() {
+
     var backgroundThreadRealm : Realm = Realm.getDefaultInstance()
 
     override fun onCreate(){
@@ -112,15 +114,21 @@ class DataBaseManager : Application() {
     }
 
     fun sauverNote(listeCouple : RealmList<Couple>, inputTitreNote : String, inputCategorieID : String){
+
         val transaction = backgroundThreadRealm.executeTransactionAsync { transactionRealm ->
-            var note = transactionRealm.createObject<Note>(ObjectId())
-            note.reponses = listeCouple
+            var note : Note = transactionRealm.createObject<Note>(ObjectId())
+            note.reponses?.addAll(listeCouple)
             note.titreNote = inputTitreNote
             note.categorie = inputCategorieID
         }
+
+
     }
 
-    fun chargerNote(listeCouple : RealmList<Couple>, inputTitreNote : String, inputCategorieID : String){
+    fun chargerNotes(): RealmResults<Note>? {
         val query = backgroundThreadRealm.where<Note>()
+        return query.findAll()
     }
+
+
 }

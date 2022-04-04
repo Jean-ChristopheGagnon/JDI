@@ -16,14 +16,8 @@ class CategoriesFragment() : Fragment() {
 
         val view: View = inflater!!.inflate(R.layout.fragment_categories, container, false)
 
-/*
-        val button_dynamic = Button(this)
-        button_dynamic.layoutParams = LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT)
-        button_dynamic.text = "Dynamic Button"
-*/
 
 
-/*
         btn_cat_text = view.findViewById(R.id.btn_cat_text)
         btn_cat_text.setOnClickListener {
             loadCatFragment(CatTextFragment(), view)
@@ -33,7 +27,7 @@ class CategoriesFragment() : Fragment() {
         btn_cat_dream.setOnClickListener {
             loadCatFragment(CatDreamFragment(), view)
         }
-*/
+
 
 
         return view

@@ -18,6 +18,8 @@ class CatTextFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view: View = inflater!!.inflate(R.layout.fragment_cat_text, container, false)
 
+        et_text = view.findViewById(R.id.et_text)
+
         btn_save_cat_text = view.findViewById(R.id.btn_save_cat_text)
         btn_save_cat_text.setOnClickListener {
             saveUserInput()
