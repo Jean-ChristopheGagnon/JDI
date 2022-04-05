@@ -21,7 +21,6 @@ class DataBaseManager : Application() {
         Realm.init(this)
 
 
-        // Si on enlève les commentaires du code suivant:
         // ca cree une categorie Films avec quatre champs dont un
         // optionnel dans un fichier realm qui est cree dans l'emulateur
         // ou dans l'appareil au moment ou on lance l'application.
