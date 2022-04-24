@@ -13,4 +13,9 @@
     <string name="reve">Rêves</string>
     <string name="texte">Texte</string>
     <string name="film">Films</string>
+
+    <string-array name="type_reponse">
+        <item>Texte</item>
+        <item>Checkbox</item>
+    </string-array>
 </resources>

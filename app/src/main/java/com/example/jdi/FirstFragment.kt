@@ -24,7 +24,7 @@ class FirstFragment() : Fragment() {
 
     override fun onViewCreated(itemView: View, savedInstanceState: Bundle?){
         super.onViewCreated(itemView, savedInstanceState)
-        var recycler = requireView().findViewById<RecyclerView>(R.id.recyclerview)
+        val recycler = requireView().findViewById<RecyclerView>(R.id.recyclerview)
         recycler.apply{
             // set a LinearLayoutManager to handle Android
             // RecyclerView behavior

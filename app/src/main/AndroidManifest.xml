@@ -11,6 +11,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.JDI">
         <activity
+            android:name=".CreerCategorieActivity"
+            android:parentActivityName=".MainActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true"
             android:theme="@style/Theme.JDI.NoActionBar">

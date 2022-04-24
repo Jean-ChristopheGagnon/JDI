@@ -2,6 +2,7 @@ package com.example.jdi
 
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -21,10 +22,24 @@ class SecondFragment : Fragment() {
 
         val view: View = inflater!!.inflate(R.layout.fragment_second, container, false)
 
-        parentFragmentManager.beginTransaction().replace(R.id.form_container, CategoriesFragment(), tag).commit()
+
+
+//        parentFragmentManager.beginTransaction().replace(R.id.form_container, CategoriesFragment(), tag).commit()
 
         return view
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        val buttonClick = requireView().findViewById<Button>(R.id.creer_categorie)
+        buttonClick.setOnClickListener() {
+            val intent = Intent(context, CreerCategorieActivity::class.java)
+            startActivity(intent)
+        }
+
+
+
+    }
 }
 
