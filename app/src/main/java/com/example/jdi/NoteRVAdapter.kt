@@ -4,10 +4,11 @@ import androidx.recyclerview.widget.RecyclerView
 import android.view.View
 import android.view.ViewGroup
 import android.view.LayoutInflater
-import android.widget.ImageView
 import android.widget.TextView
+import com.example.jdi.model.Note
+import io.realm.RealmResults
 
-class CustomAdapter(private val mList: List<ItemViewModel>) : RecyclerView.Adapter<CustomAdapter.ViewHolder>() {
+class NoteRVAdapter(private val mList: RealmResults<Note>) : RecyclerView.Adapter<NoteRVAdapter.ViewHolder>() {
 
     // create new views
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -22,13 +23,10 @@ class CustomAdapter(private val mList: List<ItemViewModel>) : RecyclerView.Adapt
     // binds the list items to a view
     override fun onBindViewHolder(holder: ViewHolder, position: Int){
 
-        val ItemsViewModel = mList[position]
-
-        // sets the image to the imageview from our itemHolder class
-        holder.imageView.setImageResource(ItemsViewModel.image)
+        val Note = mList[position]
 
         // sets the text to the textview from our itemHolder class
-        holder.textView.text = ItemsViewModel.text
+        holder.textView.text = Note!!.titreNote
     }
 
     // return the number of the items in the list
@@ -38,7 +36,7 @@ class CustomAdapter(private val mList: List<ItemViewModel>) : RecyclerView.Adapt
 
     // Holds the views for adding it to image and text
     class ViewHolder(ItemView: View) : RecyclerView.ViewHolder(ItemView){
-        val imageView: ImageView = itemView.findViewById(R.id.imageView)
+//        val imageView: ImageView = itemView.findViewById(R.id.imageView)
         val textView: TextView = itemView.findViewById(R.id.textView)
     }
 }

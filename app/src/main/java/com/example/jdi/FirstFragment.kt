@@ -5,16 +5,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.RelativeLayout
-import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import java.io.File
+import com.example.jdi.model.Note
 
 class FirstFragment() : Fragment() {
     // inflate the layout
     private var layoutManager: RecyclerView.LayoutManager? = null
-    private var adapter: RecyclerView.Adapter<CustomAdapter.ViewHolder>? = null
+    private var adapter: RecyclerView.Adapter<NoteRVAdapter.ViewHolder>? = null
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
@@ -34,14 +32,15 @@ class FirstFragment() : Fragment() {
             // set the custom adapter to the RecyclerView
 
             // ArrayList of class ItemViewModel
-            val data = ArrayList<ItemViewModel>()
+            val data = ArrayList<Note>()
+            val notes = (activity as MainActivity?)!!.queryNotesFromDBM()
 
             // This loop will create 20 views containing the image with the count of view
-            for (i in 1..20){
-                data.add(ItemViewModel(R.drawable.ic_launcher_foreground, "Item " + i))
-            }
-
-            adapter = CustomAdapter(data)
+//            for (i in 1..20){
+//                data.add("Item " + i))
+//            }
+            if (notes != null)
+                adapter = NoteRVAdapter(notes)
         }
     }
 }
