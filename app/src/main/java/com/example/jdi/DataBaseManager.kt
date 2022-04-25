@@ -124,6 +124,20 @@ class DataBaseManager : Application() {
 
     }
 
+    fun sauverCategorie(nomCategorie: String, listeChamps: RealmList<Champ>){
+        val categorie = Categorie()
+        categorie.listeChamps = listeChamps
+        categorie.nomCategorie = nomCategorie
+        categorie.typeCategorie = "Persistante"
+
+        println(categorie.isValid)
+        backgroundThreadRealm.executeTransactionAsync{ transactionRealm ->
+            transactionRealm.insert(categorie)
+
+
+        }
+    }
+
     fun chargerNotes(): RealmResults<Note>? {
         val query = backgroundThreadRealm.where<Note>()
         return query.findAll()

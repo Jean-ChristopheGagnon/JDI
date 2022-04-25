@@ -15,6 +15,8 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:hint="nom du champ"
+            android:imeOptions="actionDone"
+            android:singleLine="true"
             android:text=""
             android:textSize="15sp"
             android:textStyle="normal" />

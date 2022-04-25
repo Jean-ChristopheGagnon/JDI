@@ -10,12 +10,12 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.jdi.model.Note
 
 class FirstFragment() : Fragment() {
-    // inflate the layout
+
     private var layoutManager: RecyclerView.LayoutManager? = null
     private var adapter: RecyclerView.Adapter<NoteRVAdapter.ViewHolder>? = null
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-
+        // inflate the layout
         val view: View = inflater!!.inflate(R.layout.fragment_first, container, false)
 //        parentFragmentManager.beginTransaction().replace(R.id.note_container, NotesFragment(), "tagNotesFragment").commit()
 

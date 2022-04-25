@@ -23,10 +23,10 @@ class NoteRVAdapter(private val mList: RealmResults<Note>) : RecyclerView.Adapte
     // binds the list items to a view
     override fun onBindViewHolder(holder: ViewHolder, position: Int){
 
-        val Note = mList[position]
+        val note = mList[position]
 
         // sets the text to the textview from our itemHolder class
-        holder.textView.text = Note!!.titreNote
+        holder.textView.text = note!!.titreNote
     }
 
     // return the number of the items in the list

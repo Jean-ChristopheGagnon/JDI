@@ -2,16 +2,40 @@ package com.example.jdi
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.ArrayAdapter
-import android.widget.Spinner
+import android.view.View
+import android.widget.EditText
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.jdi.model.Champ
+import io.realm.RealmList
 
 class CreerCategorieActivity : AppCompatActivity() {
 
     private var layoutManager: RecyclerView.LayoutManager? = null
     private var adapter: RecyclerView.Adapter<CreationCategorieChampsRVAdapter.ViewHolder>? = null
+    val data = ArrayList<String>()
+
+    var test = CreationCategorieChampsRVAdapter(ArrayList<String>())
+
+    fun saveCategory(view: View){
+//        println(test.mDataset)
+        val champsRemplis = test.getTempDataset()
+        val titre = findViewById<EditText>(R.id.titre_categorie).text.toString()
+
+        val realmList = RealmList<Champ>()
+
+        for(nomChamp in champsRemplis!!){
+            val champ = Champ()
+            champ.estObligatoire = true
+            champ.typeReponse = "Champ texte"
+            champ.nomChamp = nomChamp
+
+            realmList.add(champ)
+        }
+
+            DataBaseManager().sauverCategorie(titre, realmList)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,33 +49,38 @@ class CreerCategorieActivity : AppCompatActivity() {
             // set the custom adapter to the RecyclerView
 
             // ArrayList of class ItemViewModel
-            val data = ArrayList<String>()
+
 
 
             // This loop will create 5 views
             for (i in 1..5){
                 data.add("")
             }
-
+            test = CreationCategorieChampsRVAdapter(data)
             adapter = CreationCategorieChampsRVAdapter(data)
+
 
 //            if (notes != null)
 //                adapter = NoteRVAdapter(notes)
         }
 
-        // TODO bouton sauvegarder (creer la categorie dans le realm. Retour au MainActivity)
+
+
+
+
+
+        // adapter.notifyItemChanged(position)
+
 
         // TODO ajouter un champ au recyclerview quand on clique sur un bouton
+        // data.add("")
+        // adapter.notifyItemInserted(data.size() - 1)
+        // rvContacts.scrollToPosition(adapter.getItemCount() - 1)
 
 
 
-        // TODO spinner pour dropdown qui permet de choisir entre champ texte et checkbox
-        // pour le type de reponse
 
 
-
-        // TODO premier champ est le titre de la categorie, et le format est un peu different
-        // des autres du recycler view
 
 
 
