@@ -28,7 +28,7 @@ class CreerCategorieActivity : AppCompatActivity() {
             val data = ArrayList<String>()
 
 
-//             This loop will create 20 views containing the image with the count of view
+            // This loop will create 5 views
             for (i in 1..5){
                 data.add("")
             }
@@ -38,6 +38,24 @@ class CreerCategorieActivity : AppCompatActivity() {
 //            if (notes != null)
 //                adapter = NoteRVAdapter(notes)
         }
+
+        // TODO bouton sauvegarder (creer la categorie dans le realm. Retour au MainActivity)
+
+        // TODO ajouter un champ au recyclerview quand on clique sur un bouton
+
+
+
+        // TODO spinner pour dropdown qui permet de choisir entre champ texte et checkbox
+        // pour le type de reponse
+
+
+
+        // TODO premier champ est le titre de la categorie, et le format est un peu different
+        // des autres du recycler view
+
+
+
+        // TODO checkbox estObligatoire
 
 //        val spinner: Spinner = findViewById(R.id.type_reponse_spinner)
 //

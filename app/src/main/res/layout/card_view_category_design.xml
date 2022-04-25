@@ -17,12 +17,13 @@
             android:hint="nom du champ"
             android:text=""
             android:textSize="15sp"
-            android:textStyle="bold" />
+            android:textStyle="normal" />
 
         <Spinner
             android:id="@+id/type_reponse_spinner"
             android:layout_width="175dp"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:entries="@array/type_reponse" />
     </GridLayout>
 
 </androidx.cardview.widget.CardView>

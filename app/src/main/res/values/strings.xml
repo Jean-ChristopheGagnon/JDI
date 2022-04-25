@@ -15,7 +15,7 @@
     <string name="film">Films</string>
 
     <string-array name="type_reponse">
-        <item>Texte</item>
+        <item>Champ texte</item>
         <item>Checkbox</item>
     </string-array>
 </resources>
