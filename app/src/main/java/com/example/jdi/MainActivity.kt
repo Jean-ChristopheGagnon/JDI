@@ -10,6 +10,7 @@ import androidx.fragment.app.FragmentTransaction
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.viewpager.widget.ViewPager
+import com.example.jdi.model.Categorie
 import com.example.jdi.model.Couple
 import com.example.jdi.model.Note
 import com.google.android.material.tabs.TabLayout
@@ -61,6 +62,10 @@ class MainActivity : AppCompatActivity() {
 
     fun queryNotesFromDBM(): RealmResults<Note>? {
         return dataBaseManager.chargerNotes()
+    }
+
+    fun queryCategoriesFromDBM(): RealmResults<Categorie>? {
+        return dataBaseManager.chargerCategories()
     }
 
     fun refreshNotes(){

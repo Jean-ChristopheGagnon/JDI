@@ -13,6 +13,10 @@ import android.widget.EditText
 import android.widget.FrameLayout
 import android.widget.RelativeLayout
 import androidx.fragment.app.FragmentManager
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.example.jdi.model.Note
 import java.util.*
 
 class SecondFragment : Fragment() {
@@ -20,7 +24,7 @@ class SecondFragment : Fragment() {
     // inflate the layout
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
-        val view: View = inflater!!.inflate(R.layout.fragment_second, container, false)
+        val view: View = inflater.inflate(R.layout.fragment_second, container, false)
 
 
 
@@ -36,6 +40,19 @@ class SecondFragment : Fragment() {
         buttonClick.setOnClickListener() {
             val intent = Intent(context, CreerCategorieActivity::class.java)
             startActivity(intent)
+        }
+
+        val recycler = requireView().findViewById<RecyclerView>(R.id.recyclerview)
+        recycler.apply{
+            layoutManager = GridLayoutManager(activity, 2)
+            // set the custom adapter to the RecyclerView
+
+            // ArrayList of class ItemViewModel
+
+            val categories = (activity as MainActivity?)!!.queryCategoriesFromDBM()
+
+            if (categories != null)
+                adapter = MenuCategoriesRVAdapter(categories)
         }
 
 

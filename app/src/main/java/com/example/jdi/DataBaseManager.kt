@@ -143,5 +143,10 @@ class DataBaseManager : Application() {
         return query.findAll()
     }
 
+    fun chargerCategories(): RealmResults<Categorie>? {
+        val query = backgroundThreadRealm.where<Categorie>()
+        return query.findAll()
+    }
+
 
 }

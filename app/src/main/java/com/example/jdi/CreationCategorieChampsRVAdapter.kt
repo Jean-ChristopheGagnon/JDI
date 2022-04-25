@@ -10,7 +10,7 @@ import android.widget.TextView
 
 class CreationCategorieChampsRVAdapter(private val mList: ArrayList<String>) : RecyclerView.Adapter<CreationCategorieChampsRVAdapter.ViewHolder>() {
 
-    var mDataset: ArrayList<String>? = mList
+    private var mDataset: ArrayList<String>? = mList
 
     fun getTempDataset() : ArrayList<String>?{
         return mDataset
