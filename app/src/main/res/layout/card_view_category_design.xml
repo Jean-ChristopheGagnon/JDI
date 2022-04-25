@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:layout_margin="10dp">
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp">
+
+        <EditText
+            android:id="@+id/textView"
+            android:layout_width="175dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:hint="nom du champ"
+            android:imeOptions="actionDone"
+            android:singleLine="true"
+            android:text=""
+            android:textSize="15sp"
+            android:textStyle="normal" />
+
+        <Spinner
+            android:id="@+id/type_reponse_spinner"
+            android:layout_width="175dp"
+            android:layout_height="wrap_content"
+            android:entries="@array/type_reponse" />
+    </GridLayout>
+
+</androidx.cardview.widget.CardView>
